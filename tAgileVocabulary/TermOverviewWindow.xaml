@@ -1,0 +1,84 @@
+﻿<Window x:Class="tAgileVocabulary.TermOverviewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tAgileVocabulary"
+        xmlns:resx="clr-namespace:tAgileVocabulary.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static resx:Resources.TermOverviewWindowTitle}" Height="329.237" Width="617.626"
+        ResizeMode="NoResize"
+        Style="{DynamicResource VS2012WindowStyle}" 
+        Background="{DynamicResource Background}" 
+        FontFamily="./Styles/#Roboto Condensed" 
+        Foreground="{DynamicResource CloseButtonStroke}"
+        Loaded="Window_Loaded" WindowStartupLocation="CenterScreen"
+    >
+    <Grid Background="{DynamicResource BackgroundNormal}">
+        <Label Content="{x:Static resx:Resources.DGTerm}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="{DynamicResource CloseButtonStrokeHighlighted}" FontFamily="Segoe UI"/>
+        <TextBox Name="txTerm" DataContext="{Binding Path=term,UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left" Height="30" Margin="10,36,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="292" Foreground="{DynamicResource CloseButtonStrokeHighlighted}" Style="{DynamicResource StandardTextBox}" FontSize="14.667" FontFamily="Segoe UI"/>
+
+        <Label Content="{x:Static resx:Resources.DGTranscription}" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Foreground="{DynamicResource CloseButtonStrokeHighlighted}" FontFamily="Segoe UI"/>
+        <TextBox Name="txTranscription" DataContext="{Binding Path=transcription,UpdateSourceTrigger=Explicit}" HorizontalAlignment="Left" Height="30" Margin="10,96,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="292" Foreground="{DynamicResource CloseButtonStrokeHighlighted}" Style="{DynamicResource StandardTextBox}" FontSize="14.667" FontFamily="Segoe UI"/>
+
+        <Label Content="{x:Static resx:Resources.DGInterpretation}" HorizontalAlignment="Left" Margin="307,10,0,0" VerticalAlignment="Top" Foreground="{DynamicResource CloseButtonStrokeHighlighted}" FontFamily="Segoe UI"/>
+        <TextBox x:Name="txInterpretation" DataContext="{Binding Path=interpretation,UpdateSourceTrigger=Explicit}" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="235" Margin="307,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" Foreground="{DynamicResource CloseButtonStrokeHighlighted}" Style="{DynamicResource StandardTextBox}" FontSize="13.333" FontFamily="Segoe UI"/>
+
+        <Button Content="{x:Static resx:Resources.SaveButton}" Click="btnSaveTask_Click" x:Name="btnSaveTask" HorizontalAlignment="Left" Margin="10,248,0,0" VerticalAlignment="Top" Width="88" Style="{DynamicResource StandardButton}" Height="24" FontFamily="Segoe UI"/>
+        <Button Content="{x:Static resx:Resources.DeleteButton}" Click="btnRemoveTask_Click" x:Name="btnRemoveTask" HorizontalAlignment="Left" Margin="214,248,0,0" VerticalAlignment="Top" Width="88" Style="{DynamicResource LowStandardButton}" Height="24" FontFamily="Segoe UI" />
+
+        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="103" Margin="10,131,0,0" VerticalAlignment="Top" Width="292"/>
+        <Button Content="ð" Click="Button_Click" HorizontalAlignment="Left" Margin="18,138,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19" FontSize="13.333" FontFamily="Segoe UI" />
+        <Button Content="θ" Click="Button_Click" HorizontalAlignment="Left" Margin="40,138,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ʧ" Click="Button_Click" HorizontalAlignment="Left" Margin="62,138,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ʤ" Click="Button_Click" HorizontalAlignment="Left" Margin="84,138,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ʒ" Click="Button_Click" HorizontalAlignment="Left" Margin="106,138,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ʃ" Click="Button_Click" HorizontalAlignment="Left" Margin="128,138,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ŋ" Click="Button_Click" HorizontalAlignment="Left" Margin="150,138,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="j" Click="Button_Click" HorizontalAlignment="Left" Margin="172,138,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="w" Click="Button_Click" HorizontalAlignment="Left" Margin="194,138,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="p" Click="Button_Click" HorizontalAlignment="Left" Margin="216,138,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="b" Click="Button_Click" HorizontalAlignment="Left" Margin="238,138,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="m" Click="Button_Click" HorizontalAlignment="Left" Margin="260,138,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="f" Click="Button_Click" HorizontalAlignment="Left" Margin="282,138,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="v" Click="Button_Click" HorizontalAlignment="Left" Margin="18,162,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="s" Click="Button_Click" HorizontalAlignment="Left" Margin="40,162,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="z" Click="Button_Click" HorizontalAlignment="Left" Margin="62,162,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="t" Click="Button_Click" HorizontalAlignment="Left" Margin="84,162,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="d" Click="Button_Click" HorizontalAlignment="Left" Margin="106,162,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="n" Click="Button_Click" HorizontalAlignment="Left" Margin="128,162,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="l" Click="Button_Click" HorizontalAlignment="Left" Margin="150,162,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="r" Click="Button_Click" HorizontalAlignment="Left" Margin="172,162,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="k" Click="Button_Click" HorizontalAlignment="Left" Margin="194,162,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="g" Click="Button_Click" HorizontalAlignment="Left" Margin="216,162,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="h" Click="Button_Click" HorizontalAlignment="Left" Margin="238,162,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ð" Click="Button_Click" HorizontalAlignment="Left" Margin="260,162,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ɪ" Click="Button_Click" HorizontalAlignment="Left" Margin="282,162,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ɔ" Click="Button_Click" HorizontalAlignment="Left" Margin="18,186,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ɑ" Click="Button_Click" HorizontalAlignment="Left" Margin="40,186,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ʌ" Click="Button_Click" HorizontalAlignment="Left" Margin="62,186,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="æ" Click="Button_Click" HorizontalAlignment="Left" Margin="84,186,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ə" Click="Button_Click" HorizontalAlignment="Left" Margin="106,186,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ə:" Click="Button_Click" HorizontalAlignment="Left" Margin="128,186,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ə:" Click="Button_Click" HorizontalAlignment="Left" Margin="150,186,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="i:" Click="Button_Click" HorizontalAlignment="Left" Margin="172,186,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="e" Click="Button_Click" HorizontalAlignment="Left" Margin="194,186,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="u" Click="Button_Click" HorizontalAlignment="Left" Margin="216,186,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="u:" Click="Button_Click" HorizontalAlignment="Left" Margin="238,186,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="o:" Click="Button_Click" HorizontalAlignment="Left" Margin="260,186,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ju:" Click="Button_Click" HorizontalAlignment="Left" Margin="282,186,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ei" Click="Button_Click" HorizontalAlignment="Left" Margin="19,210,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ɑi" Click="Button_Click" HorizontalAlignment="Left" Margin="41,210,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ɑu" Click="Button_Click" HorizontalAlignment="Left" Margin="63,210,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ɔi" Click="Button_Click" HorizontalAlignment="Left" Margin="85,210,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ɔu" Click="Button_Click" HorizontalAlignment="Left" Margin="107,210,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="iə" Click="Button_Click" HorizontalAlignment="Left" Margin="129,210,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ɛə" Click="Button_Click" HorizontalAlignment="Left" Margin="151,210,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="uə" Click="Button_Click" HorizontalAlignment="Left" Margin="173,210,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="juə" Click="Button_Click" HorizontalAlignment="Left" Margin="195,210,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ɑiə" Click="Button_Click" HorizontalAlignment="Left" Margin="216,210,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ɑuə" Click="Button_Click" HorizontalAlignment="Left" Margin="238,210,0,0" VerticalAlignment="Top" Width="25" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+        <Button Content="ˈ" Click="Button_Click" HorizontalAlignment="Left" Margin="282,210,0,0" VerticalAlignment="Top" Width="17" Style="{DynamicResource LowStandardButton}" Height="19"  FontSize="13.333" FontFamily="Segoe UI"/>
+
+    </Grid>
+</Window>
