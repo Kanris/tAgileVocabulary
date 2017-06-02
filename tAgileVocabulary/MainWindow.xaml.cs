@@ -28,7 +28,7 @@ namespace tAgileVocabulary
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dghelper.updatedgOverview(null, dgOverview); //обновляем dgOverview
+            dghelper.updatedgOverview(dgOverview); //обновляем dgOverview
         }
 
 
@@ -38,7 +38,7 @@ namespace tAgileVocabulary
 
             if (termWindow.ShowDialog() == true)
             {
-                dghelper.updatedgOverview(null, dgOverview); //обновляем dgOverview
+                dghelper.updatedgOverview(dgOverview); //обновляем dgOverview
             }
         }
 
@@ -56,7 +56,7 @@ namespace tAgileVocabulary
 
                     if (termWindow.ShowDialog() == true)
                     {
-                        dghelper.updatedgOverview(null, dgOverview); //обновляем dgOverview
+                        dghelper.updatedgOverview(dgOverview); //обновляем dgOverview
                     }
                 }
             }

@@ -19,7 +19,7 @@ namespace tAgileVocabulary.DGHelper
             db = new TermDBHandler();
         }
 
-        public bool updatedgOverview(List<Term> listOfTerms, DataGrid dgOverview)
+        public bool updatedgOverview(DataGrid dgOverview, List<Term> listOfTerms = null)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace tAgileVocabulary.DGHelper
 
             if (searchedTerms.Count > 0)
             {
-                updatedgOverview(searchedTerms, dgOverview); //обновляем dgOverview
+                updatedgOverview(dgOverview, searchedTerms); //обновляем dgOverview
 
             }
             else
