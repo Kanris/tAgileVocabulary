@@ -124,15 +124,6 @@ namespace tAgileVocabulary.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The search has not given any results.
-        /// </summary>
-        public static string SearchFailed {
-            get {
-                return ResourceManager.GetString("SearchFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Write keyword here and press Enter to search.
         /// </summary>
         public static string SearchText {

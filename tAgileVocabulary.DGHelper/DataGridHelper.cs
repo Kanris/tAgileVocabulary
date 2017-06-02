@@ -27,7 +27,12 @@ namespace tAgileVocabulary.DGHelper
                     listOfTerms = db.getTerms();
 
                 dgOverview.Items.Clear(); //Очищаем все строки
-                dgOverview.Items.Add(addTermsToDG(listOfTerms)); //Заполняем информацией
+                
+                foreach(var item in addTermsToDG(listOfTerms))
+                {
+                    dgOverview.Items.Add(item);
+                }
+
                 actualDataGridSize(dgOverview);
 
                 return true;
@@ -39,6 +44,23 @@ namespace tAgileVocabulary.DGHelper
                 return false;
             }
 
+        }
+
+        public void SearchTerm(string txSearch, DataGrid dgOverview)
+        {
+            List<Term> searchedTerms = db.searchTerm(txSearch);
+
+            if (searchedTerms.Count > 0)
+            {
+                updatedgOverview(searchedTerms, dgOverview); //обновляем dgOverview
+
+            }
+            else
+            {
+                dgOverview.Focus();
+                
+                MessageBox.Show("The search has not given any results");
+            }
         }
 
         private IEnumerable<Term> addTermsToDG(List<Term> listOfTerms)

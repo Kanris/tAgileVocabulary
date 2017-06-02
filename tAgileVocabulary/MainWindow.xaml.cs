@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using TermDBHandlerLibrary;
+using tAgileVocabulary.DGHelper;
 
 namespace tAgileVocabulary
 {
@@ -17,14 +18,17 @@ namespace tAgileVocabulary
 
     public partial class MainWindow : Window
     {
+        private DataGridHelper dghelper;
+
         public MainWindow()
         {
             InitializeComponent();
+            dghelper = new DataGridHelper();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            updatedgOverview(null); //обновляем dgOverview
+            dghelper.updatedgOverview(null, dgOverview); //обновляем dgOverview
         }
 
 
@@ -34,7 +38,7 @@ namespace tAgileVocabulary
 
             if (termWindow.ShowDialog() == true)
             {
-                updatedgOverview(null); //обновляем dgOverview
+                dghelper.updatedgOverview(null, dgOverview); //обновляем dgOverview
             }
         }
 
@@ -52,7 +56,7 @@ namespace tAgileVocabulary
 
                     if (termWindow.ShowDialog() == true)
                     {
-                        updatedgOverview(null); //обновляем dgOverview
+                        dghelper.updatedgOverview(null, dgOverview); //обновляем dgOverview
                     }
                 }
             }
@@ -62,19 +66,8 @@ namespace tAgileVocabulary
         {
             if (e.Key == Key.Enter)
             {
-                List<Term> searchedTerms = db.searchTerm(txSearch.Text);
-
-                if (searchedTerms.Count > 0)
-                {
-                    updatedgOverview(searchedTerms); //обновляем dgOverview
-
-                } else
-                {
-                    dgOverview.Focus();
-
-                    MessageBox.Show(Properties.Resources.SearchFailed);
-                }
-                
+                var searchWord = txSearch.Text;
+                dghelper.SearchTerm(searchWord, dgOverview);
             }
         }
 

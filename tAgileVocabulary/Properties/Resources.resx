@@ -135,9 +135,6 @@
   <data name="SaveButton" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="SearchFailed" xml:space="preserve">
-    <value>The search has not given any results</value>
-  </data>
   <data name="SearchText" xml:space="preserve">
     <value>Write keyword here and press Enter to search</value>
   </data>
