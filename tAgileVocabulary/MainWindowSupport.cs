@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
+using System.Resources;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
+using TermDBHandlerLibrary;
+using tAgileVocabulary.DGHelper;
 
 namespace tAgileVocabulary
 {
@@ -36,7 +39,15 @@ namespace tAgileVocabulary
             }
         }
 
+        public static void AddNewTerm(DataGridHelper dghelper, DataGrid dgOverview)
+        {
+            TermOverviewWindow termWindow = new TermOverviewWindow(TermOverviewOperation.ADD, null); //Вывозов окна добавления задачи
 
+            if (termWindow.ShowDialog() == true)
+            {
+                dghelper.updatedgOverview(dgOverview); //обновляем dgOverview
+            }
+        }
 
     }
 }

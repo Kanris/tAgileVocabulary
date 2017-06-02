@@ -34,12 +34,7 @@ namespace tAgileVocabulary
 
         private void btnAddTask_Click(object sender, RoutedEventArgs e)
         {
-            TermOverviewWindow termWindow = new TermOverviewWindow(TermOverviewOperation.ADD, null); //Вывозов окна добавления задачи
-
-            if (termWindow.ShowDialog() == true)
-            {
-                dghelper.updatedgOverview(dgOverview); //обновляем dgOverview
-            }
+            MainWindowSupport.AddNewTerm(dghelper, dgOverview);
         }
 
         private void dgOverview_MouseDoubleClick(object sender, MouseButtonEventArgs e)
