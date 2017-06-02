@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tAgileVocabulary
 {
-    enum TermOverviewOperation
+    public enum TermOverviewOperation
     {
         ADD,
         EDIT
