@@ -49,5 +49,25 @@ namespace tAgileVocabulary
             }
         }
 
+        public static void EditTerm(DataGridHelper dghelper, DataGrid dgOverview)
+        {
+            if (dgOverview.SelectedItem != null)
+            {
+                Term selectedTerm = dgOverview.SelectedItem as Term;
+
+                int termID = Convert.ToInt32(selectedTerm.termID);
+
+                if (termID > -1)
+                {
+                    TermOverviewWindow termWindow = new TermOverviewWindow(TermOverviewOperation.EDIT, selectedTerm); //Вывозов окна добавления задачи
+
+                    if (termWindow.ShowDialog() == true)
+                    {
+                        dghelper.updatedgOverview(dgOverview); //обновляем dgOverview
+                    }
+                }
+            }
+        }
+
     }
 }
