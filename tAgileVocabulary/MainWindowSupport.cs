@@ -23,5 +23,18 @@ namespace tAgileVocabulary
             }
         }
 
+        public static void GotFocus(object sender)
+        {
+            if (sender is TextBox)
+            {
+                //If nothing has been entered yet.
+                if ((sender as TextBox).Foreground == Brushes.LightGray)
+                {
+                    (sender as TextBox).Text = "";
+                    (sender as TextBox).Foreground = Brushes.WhiteSmoke;
+                }
+            }
+        }
+
     }
 }

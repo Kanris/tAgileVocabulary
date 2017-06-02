@@ -122,15 +122,7 @@ namespace tAgileVocabulary
 
         private void txSearch_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
-            if (sender is TextBox)
-            {
-                //If nothing has been entered yet.
-                if ((sender as TextBox).Foreground == Brushes.LightGray)
-                {
-                    (sender as TextBox).Text = "";
-                    (sender as TextBox).Foreground = Brushes.WhiteSmoke;
-                }
-            }
+            MainWindowSupport.GotFocus(sender);
         }
 
         private void txSearch_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
