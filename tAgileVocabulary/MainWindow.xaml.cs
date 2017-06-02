@@ -17,8 +17,6 @@ namespace tAgileVocabulary
 
     public partial class MainWindow : Window
     {
-        private TermDBHandler db = new TermDBHandler();
-
         public MainWindow()
         {
             InitializeComponent();
@@ -78,46 +76,6 @@ namespace tAgileVocabulary
                 }
                 
             }
-        }
-
-        //=======================================================================================================================
-        private void addTermsToDG(List<Term> listOfTerms)
-        {
-            foreach(Term newRow in listOfTerms)
-            {
-                dgOverview.Items.Add(newRow);
-            }
-        }
-
-        private void updatedgOverview(List<Term> listOfTerms)
-        {
-            try
-            {
-                if (listOfTerms == null)
-                    listOfTerms = db.getTerms();
-
-                dgOverview.Items.Clear(); //Очищаем все строки
-                addTermsToDG(listOfTerms); //Заполняем информацией
-                actualDataGridSize();
-            } 
-            catch (Exception e)
-            {
-                MessageBox.Show($"Exception message: \n {e.Message}", "Can't open db", MessageBoxButton.OK, MessageBoxImage.Error);
-                this.Close();
-            }
-
-        }
-
-        private void actualDataGridSize()
-        {
-            if (dgOverview.Items.Count > 0)
-            {
-                for (int i = 1; i < dgOverview.Columns.Count; ++i)
-                {
-                    dgOverview.Columns[i].Width = new DataGridLength(1.0, DataGridLengthUnitType.SizeToCells);
-                }
-            }
-
         }
 
         private void txSearch_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
