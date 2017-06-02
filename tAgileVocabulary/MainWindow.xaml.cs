@@ -135,15 +135,7 @@ namespace tAgileVocabulary
 
         private void txSearch_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
-            if (sender is TextBox)
-            {
-                //If nothing was entered, reset default text.
-                if ((sender as TextBox).Text.Trim().Equals(""))
-                {
-                    (sender as TextBox).Foreground = Brushes.LightGray;
-                    (sender as TextBox).Text = Properties.Resources.SearchText;
-                }
-            }
+            MainWindowSupport.LostFocus(sender);
         }
     }
 }
