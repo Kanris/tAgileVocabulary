@@ -11,13 +11,10 @@ namespace tAgileVocabulary
     {
         TermDBHandler db = new TermDBHandler();
 
-        public const string OPERATION_ADD = "ADD";
-        public const string OPERATION_EDIT = "EDIT";
-
-        string operation = string.Empty; //Операция
+        TermOverviewOperation operation; //Операция
         Term editTerm;
 
-        public TermOverviewWindow(string operation, Term editTerm)
+        public TermOverviewWindow(TermOverviewOperation operation, Term editTerm)
         {
             InitializeComponent();
 
@@ -27,7 +24,7 @@ namespace tAgileVocabulary
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if (operation == OPERATION_ADD)
+            if (operation == TermOverviewOperation.ADD)
             {
                 btnRemoveTask.Visibility = Visibility.Collapsed;
 
@@ -52,7 +49,7 @@ namespace tAgileVocabulary
         {
             if (txTerm.Text.Length > 0)
             {
-                if (this.operation == OPERATION_ADD)
+                if (operation == TermOverviewOperation.ADD)
                 {
 
                     Term newTerm = createTerm();

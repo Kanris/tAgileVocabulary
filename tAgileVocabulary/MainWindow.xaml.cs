@@ -34,7 +34,7 @@ namespace tAgileVocabulary
 
         private void btnAddTask_Click(object sender, RoutedEventArgs e)
         {
-            TermOverviewWindow termWindow = new TermOverviewWindow(TermOverviewWindow.OPERATION_ADD, null); //Вывозов окна добавления задачи
+            TermOverviewWindow termWindow = new TermOverviewWindow(TermOverviewOperation.ADD, null); //Вывозов окна добавления задачи
 
             if (termWindow.ShowDialog() == true)
             {
@@ -52,7 +52,7 @@ namespace tAgileVocabulary
 
                 if (termID > -1)
                 {
-                    TermOverviewWindow termWindow = new TermOverviewWindow(TermOverviewWindow.OPERATION_EDIT, selectedTerm); //Вывозов окна добавления задачи
+                    TermOverviewWindow termWindow = new TermOverviewWindow(TermOverviewOperation.EDIT, selectedTerm); //Вывозов окна добавления задачи
 
                     if (termWindow.ShowDialog() == true)
                     {
